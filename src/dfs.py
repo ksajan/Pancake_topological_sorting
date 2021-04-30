@@ -1,9 +1,9 @@
 
-class Graph:
-    def __init__(self, edges, N):
-        self.adjList = [[] for _ in range(N)]
-        for (src, dest) in edges:
-            self.adjList[src].append(dest)
+# class Graph:
+#     def __init__(self, edges, N):
+#         self.adjList = [[] for _ in range(N)]
+#         for (src, dest) in edges:
+#             self.adjList[src].append(dest)
 
 def DFS(graph, v, discovered, arrival, departure, time):
 
