@@ -38,11 +38,12 @@ bool sortByFinishTime(const vector<int> &v1, const vector<int> &v2){
 
 void topologicalSort(vector<vector<int> > &finishOrder, int rows, int cols){
     sort(finishOrder.begin(), finishOrder.end(), sortByFinishTime);
+    cout << "Result after Topological Sort on Pancake Graph based on finish time" << endl;
+    cout << endl;
+    cout << " Vertex " << " Arrival " << " Finish " << endl;
     for (int i=0; i<rows; i++)
-    {
-        for (int j=0; j<cols ;j++)
-            cout << finishOrder[i][j] << " ";
-        cout << endl;
+    { 
+        cout << "    " << finishOrder[i][0] << "       " << finishOrder[i][1] << "      " << finishOrder[i][2] << endl;
     }
 }
 
@@ -64,16 +65,22 @@ int main(){
         }
     }
     vector<vector<int> > finishOrder(N);
+    cout << endl;
+    cout << "List of Vertex in pancake Graph with their arrival and finish time ( Arrival, Finish )" << endl;
+    cout << endl;
+    cout << " Vertex " << " Arrival " << " Finish " << endl;
     for (int i = 0; i < N; i++)
     {
-        cout << "Vertex " << i << " (" << start[i] << ", " << finish[i] << ")" << endl;
+        cout << "   "<< i << "       " << start[i] << "      " << finish[i]  << endl;
         finishOrder[i] = vector<int>(3);
         finishOrder[i][0] = i;
         finishOrder[i][1] = start[i];
         finishOrder[i][2] = finish[i];
 
     }
-
+    cout << endl;
+    cout << "================================*******************************================================" << endl;
+    cout << endl;
     topologicalSort(finishOrder, N, 3);
     return 0;
 }
